@@ -54,7 +54,7 @@ To get testnet tokens from the faucet, follow these steps:
 
 1.  **Connect Your Wallet:** Open the DApp in your browser and click the "Connect Wallet" button.
 2.  **Switch to Helios Testnet:** Ensure your wallet is connected to the Helios Testnet network. The DApp may prompt you to switch if you are on a different network.
-3.  **Request Tokens:** Click the "Request Tokens" or "Send Me HLS" button.
+3.  **Request Tokens:** Click the "Claim $HLS" button.
 4.  **Confirm Transaction:** Your wallet may ask for a confirmation.
 5.  **Receive Tokens:** The testnet tokens will be sent to your connected wallet address shortly. You can check your wallet balance to confirm.
 
