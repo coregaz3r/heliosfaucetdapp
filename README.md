@@ -1,12 +1,61 @@
-# React + Vite
+# Unofficial Helios Testnet Faucet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, user-friendly decentralized application (DApp) to get free testnet tokens for the Helios blockchain network. This tool is designed for developers who need test assets to deploy and test their smart contracts in a development environment.
 
-Currently, two official plugins are available:
+## 📖 About The Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+In blockchain development, testing smart contracts on a live network requires tokens to pay for gas fees and interactions. A "faucet" is a developer tool that provides a small amount of free testnet tokens to users upon request. These tokens have no real-world value and are intended solely for testing purposes.
 
-## Expanding the ESLint configuration
+This Unofficial Helios Faucet allows developers to quickly and easily fund their wallets with testnet HLS tokens, enabling them to test their applications on the Helios testnet without spending any real assets.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+
+* **Easy Token Requests:** Get testnet HLS tokens with a single click.
+* **Wallet Integration:** Connects seamlessly with browser wallets like MetaMask.
+* **Simple Interface:** A clean and intuitive user interface for a hassle-free experience.
+* **Built with Modern Tech:** Developed using React and Vite for a fast and responsive front-end.
+
+## 🚀 Getting Started
+
+Follow these instructions to get a local copy of the project up and running on your machine for development or testing purposes.
+
+### Prerequisites
+
+* **Node.js:** Make sure you have Node.js (version 16 or later) installed. You can download it from [nodejs.org](https://nodejs.org/).
+* **Git:** You'll need Git to clone the repository.
+* **Browser Wallet:** A browser extension wallet like [MetaMask](https://metamask.io/) installed and configured.
+
+### Installation
+
+1.  **Clone the repository:**
+    ```sh
+    git clone [https://github.com/coregaz3r/heliosfaucetdapp.git](https://github.com/coregaz3r/heliosfaucetdapp.git)
+    ```
+
+2.  **Navigate to the project directory:**
+    ```sh
+    cd heliosfaucetdapp
+    ```
+
+3.  **Install NPM packages:**
+    ```sh
+    npm install
+    ```
+
+4.  **Run the development server:**
+    ```sh
+    npm run dev
+    ```
+    Open [http://localhost:5173](http://localhost:5173) (or another port seeing in terminal) in your browser to see the application.
+
+## 💧 How to Use
+
+To get testnet tokens from the faucet, follow these steps:
+
+1.  **Connect Your Wallet:** Open the DApp in your browser and click the "Connect Wallet" button.
+2.  **Switch to Helios Testnet:** Ensure your wallet is connected to the Helios Testnet network. The DApp may prompt you to switch if you are on a different network.
+3.  **Request Tokens:** Click the "Request Tokens" or "Send Me HLS" button.
+4.  **Confirm Transaction:** Your wallet may ask for a confirmation.
+5.  **Receive Tokens:** The testnet tokens will be sent to your connected wallet address shortly. You can check your wallet balance to confirm.
+
+---
