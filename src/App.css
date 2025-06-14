@@ -1,0 +1,303 @@
+/* src/App.css */
+
+/* Reset dan Pengaturan Dasar */
+body {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #121212; /* Latar belakang gelap */
+  color: #EAEAEA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container utama untuk kartu faucet */
+.faucet-wrapper {
+  width: 100%;
+  max-width: 480px;
+  padding: 20px;
+}
+
+/* Desain Kartu Faucet */
+.faucet-card {
+  background-color: #1E1E1E; /* Warna kartu sedikit lebih terang */
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  text-align: center;
+}
+
+/* Header (tombol connect wallet) */
+.header {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Judul Faucet */
+.faucet-card h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* Sub-judul/paragraf */
+.faucet-card p {
+  color: #AAAAAA;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+/* Tombol Klaim */
+.claim-button {
+  background: linear-gradient(90deg, #4F46E5, #8B5CF6);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.claim-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.5);
+}
+
+.claim-button:disabled {
+  background: #333;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Pesan Status & Error */
+.status-message {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  word-wrap: break-word;
+}
+
+.status-message.error {
+  color: #EF4444; /* Warna merah untuk error */
+}
+
+/* Tombol Loading dengan Spinner */
+.claim-button.loading .spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+.claim-button.loading .button-text {
+  display: none; /* Sembunyikan teks saat loading */
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Footer di dalam kartu */
+.card-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+}
+
+/* Link Sosial Media */
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #AAAAAA;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.social-link:hover {
+  color: #EAEAEA;
+}
+
+/* Bagian untuk mengembalikan dana */
+.return-section {
+  margin-top: 20px;
+}
+
+.return-section p {
+  font-size: 0.9rem;
+  color: #AAAAAA;
+  margin-bottom: 10px;
+}
+
+.address-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #121212;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+  color: #EAEAEA;
+  border: 1px solid #333;
+}
+
+.address-box span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Tombol copy yang lebih kecil */
+.copy-button {
+  background-color: #333;
+  color: #EAEAEA;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-left: 15px;
+  transition: background-color 0.2s ease;
+}
+
+.copy-button:hover {
+  background-color: #444;
+}
+
+/* Container utama untuk kartu faucet */
+.faucet-wrapper {
+  width: 100%;
+  max-width: 480px;
+  padding: 20px;
+  position: relative; /* <-- TAMBAHKAN INI */
+  z-index: 1;        /* <-- TAMBAHKAN INI */
+}
+
+/* Kontainer untuk menampung semua ikon yang jatuh */
+.rain-container {
+  position: fixed; /* Tetap di layar bahkan saat scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Sembunyikan ikon yang keluar dari layar */
+  z-index: 0; /* Posisikan di belakang semua konten lain */
+}
+
+/* Styling untuk setiap ikon yang jatuh */
+.falling-icon {
+  position: absolute;
+  top: -50px; /* Mulai dari atas luar layar */
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* Terapkan animasi 'fall' */
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; /* Ulangi terus-menerus */
+}
+
+/* Definisi animasi 'fall' */
+@keyframes fall {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    /* Jatuh hingga ke bawah layar + 50px agar benar-benar hilang */
+    transform: translateY(calc(100vh + 50px));
+  }
+}
+
+/* ▼▼▼ TAMBAHKAN STYLING UNTUK LINK TX HASH ▼▼▼ */
+
+.tx-link {
+  margin-top: 15px;
+}
+
+.tx-link a {
+  color: #8B5CF6; /* Warna ungu yang sesuai dengan gradien tombol */
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.tx-link a:hover {
+  color: #A78BFA;
+  text-decoration: underline;
+}
+
+/* ▼▼▼ TAMBAHKAN STYLING UNTUK TAMPILAN SALDO FAUCET ▼▼▼ */
+
+.faucet-balance {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+  color: #AAAAAA;
+  border: 1px solid #333;
+}
+
+.faucet-balance strong {
+  color: #EAEAEA;
+  font-weight: 600;
+}
+
+/* =========================== */
+/* ATURAN UNTUK TAMPILAN MOBILE */
+/* =========================== */
+
+/* Aturan ini akan berlaku untuk layar dengan lebar 768px atau kurang */
+@media (max-width: 768px) {
+
+  /* Perkecil sedikit ukuran font dasar, ini akan membuat unit 'rem' ikut mengecil */
+  html {
+    font-size: 15px;
+  }
+
+  /* Posisikan tombol connect wallet agar tidak terlalu menempel ke sudut */
+  .header {
+    top: 15px;
+    right: 15px;
+  }
+  
+  /* Kurangi padding pada kartu utama agar konten lebih lega */
+  .faucet-card {
+    padding: 25px;
+  }
+
+  /* Perkecil ukuran judul utama agar tidak terlalu mendominasi */
+  .faucet-card h1 {
+    font-size: 2rem;
+  }
+
+  /* Atur ulang layout kotak alamat agar menjadi vertikal */
+  .address-box {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .copy-button {
+    width: 100%;
+    margin-left: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
