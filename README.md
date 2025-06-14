@@ -29,7 +29,7 @@ Follow these instructions to get a local copy of the project up and running on y
 
 1.  **Clone the repository:**
     ```sh
-    git clone [https://github.com/coregaz3r/heliosfaucetdapp.git](https://github.com/coregaz3r/heliosfaucetdapp.git)
+    git clone https://github.com/coregaz3r/heliosfaucetdapp.git
     ```
 
 2.  **Navigate to the project directory:**
